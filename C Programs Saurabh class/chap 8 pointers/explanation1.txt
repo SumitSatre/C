@@ -1,0 +1,103 @@
+int *m;
+int n;
+m=&n;
+
+Pointer arithmatic:
+
+int *m;
+int n;
+m=&n;
+
+m means value of m means address of n
+*m means value of n
+
+address of n is 1000
+so value of m is 1000
+
+m=m+5;
+
+m=1000+10=1010
+
+m is 1010
+
+
+
+
+
+float *a;
+float b;
+
+a=&b;
+
+if address of b is 2000
+value of a is 2000
+
+a=a+6;
+
+a=a+(6*4)=2000+24=2024
+
+
+float *i;
+float j;
+
+i=&j;
+j address is 1000
+i value is 1000
+
+i=i-5;
+i=i-(5*4);
+i=i-20=1000-20=980
+
+
+
+
+
+
+HOW TO ACCESS ELEMENTS OF 1D ARRAY USING POINTER:
+int a[10];
+
+name of array a is  address of a[0]
+
+name of array a is pointer to a[0]
+
+a means &a[0]
+
+*a means value of a[0]
+
+*(a+0) means value of a[0]
+
+*(a+i) means value of a[i]
+
+(a+i) means address of a[i]
+
+
+
+
+If we have a 1d array named arr1,if we want address of element at any index i in arr1 array:
+&arr1[i] or arr1+i
+
+
+
+If we have a 1d array named arr1,if we want value of element at any index i in arr1 array:
+arr1[i] or *(arr1+i)
+
+
+
+
+
+
+HOW TO ACCESS ELEMENTS OF 2D ARRAY USING POINTER:
+int arr1[50][100];
+
+arr1[i] is name of row of 2d array arr1 having row index i. Because a row of 2d aray is like a 1d array and so arr1[i] gives base address of the row at row index i.
+
+
+By pointer arithmatic, arr1[i]+j gives address of element in 2d array arr1 at row index i and column index j.
+
+So address of element in 2d array at row index i and column index j is represented by arr1[i]+j or &arr1[i][j]
+
+
+So value of element in 2d array at row index i and column index j is represented by arr1[i][j] or *(arr1[i]+j)
+
+
+

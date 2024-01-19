@@ -1,0 +1,54 @@
+/*
+String:
+It is a word or sentence which contains one or many characters inside it. 
+e.g. If we consider a sentence like:My name is Saurabh. My age is 20. Then it will be considered as a string value.
+
+If we want to store a string value, then we use a 1d char array variable.
+
+char a[100];
+In above statement we have declared a 1d array variable named a, so we can store a string value of maximum 99 characters into a.
+
+To accept a string value from user into a 1d char array variable, we use the scanf() function or gets() function.
+
+char a[100];
+scanf("%s",&a);
+
+
+ 
+Tejas Mahale
+
+a[0] 'T'
+a[1] is 'e'
+a[2] is 'j'
+a[3] is 'a'
+a[4] is 's'
+a[5] is '\0'
+
+
+%s is format specifier for string type for accepting string value into 1d char array variable using scanf(). Using scanf() function, we can only accept string value with no space in it.
+e.g. Suppose during execution of scanf("%s",&a), we type string value for a variable as:
+Saurabh Satre
+and then we press ENTER key, then the C compiler will only accept the word Saurabh into a variable and ignore the remaining part of the typed string value from 1st space till end of sentence. So value stored into a variable is Saurabh.
+a[0] is 'S'
+a[1] is 'a'
+a[2] is 'u'
+...
+a[6] is 'h'
+a[7] is '\0'
+
+The compiler will automatically insert null character '\0' as last character after string value stored in a variable. So a[7] will be '\0'. The null character is not considered as part of string value but it is just to tell compiler that where the string value ends in the 1d char array variable.
+
+India is my country.   My name is Kaveesh Nadkarni.
+
+
+gets(a);
+gets() is also a predefined function in stdio.h header file.  gets(a) will accept a string value typed by user into a variable. Here user can type any no. of spaces in the string value when the user is using gets() to accept string value.
+
+e.g. Suppose user types the following string value on output screen:
+Saurabh Satre
+Then after pressing Enter key, the entire string value Saurabh Satre including all spaces will be accepted into a variable and compiler again will insert null character '\0' after last character 'e' in string value stored in a variable.
+
+When we call gets() function, we dont use format specifier %s.
+
+printf("%s",a);
+*/

@@ -1,0 +1,117 @@
+/*
+In file handling we are going to use predefined functions of stdio.h header file and store the data of the program into files of the hard disk. So data will be stored permanently.
+
+*/
+
+//pgm to read and write data character by character into file
+
+#include<stdio.h>
+
+FILE *fp;
+/*
+Here we have declared fp as a pointer variable of predefined struct type FILE.FILE is a predefined struct type in stdio.h header file.
+
+*/
+void write1();
+void read1();
+
+main()
+{
+	write1();	
+
+}
+
+void write1()
+{
+	char ch;
+
+	fp=fopen("F:\\C language Saurabh 5th October 2021\\chap 10 file handling\\saurabh1.txt","a");
+/*
+
+fopen() is a predefined function in stdio.h header file. Here we have passed 2 input arguments to fopen() function. The 1st input is the entire path of the file where we want to write data. When we mention path we must pass it as a string input to the fopen() i.e. inside double quotes. Also in the path we must use 2 back slash symbols.
+
+The 2nd input argument we pass to fopen() function is mode of opening the file. Here we have passed "a" as a string input as 2nd input argument to fopen() statement. Here "a" means append mode. Append mod and write mode are 2 types of output mode. In write mode we would need to pass "w" as 2nd input to fopen() function. If we open the file in write mode "w", then if the file named saurabh1.txt is not present physically in path mentioned "F:\\C language Saurabh 5th October 2021\\chap 10 file handling", thenc ompiler will automatically create a new file with name saurabh1.txt in the given path. But if the file named "saurabh1.txt" is present already in the path F:\\C language Saurabh 5th October 2021\\chap 10 file handling, then the old data in the file will be deleted and new data which the user will write into the file will be written from start of file if mode is "w" write mode.
+
+Here we have passed "a" as 2nd input to fopen() statement above. Here "a" means append mode. So here also if the file named saurabh1.txt is not present in F:\\C language Saurabh 5th October 2021\\chap 10 file handling, then compiler automatically creates a new file with that name. But if there is already a file named saurabh1.txt in the path F:\\C language Saurabh 5th October 2021\\chap 10 file handling, then the old data in the file is not deleted and new data is written at end of file.
+
+fopen() will open the file in appropriate mode and the fopen() will return address of current location in the file where the new data must be written. So because w ehave passed "a" as mode for opening file, so the fopen() returns address of last location in the file. 
+
+*/
+
+	
+	printf("\n Please enter characters to be stored in the file. Type  $ symbol to exit:");
+
+	while(1)
+	{
+		printf("\n Enter character:");
+		fflush(stdin);
+		scanf("%c",&ch);
+
+		if(ch=='$')
+		{
+			break;
+		}
+
+		fputc(ch,fp);
+
+	}
+/*
+fputc() is a predefined function in stdio.h header file. fputc(ch,fp) will write value of variable ch which we have accepted from user as a character value and the character value of ch variable will be stored in current location in the file pointed by fp variable. After the fputc() statement executes, the fp variable will automatically be moved to next location in the file where the next value must be written in the file.
+
+Here we have mentioned 1 as value of condition of while loop. 1 in C language represents true. So abobve while loop which we have written is a while loop whose condition is always true i.e. always while loop. So this means that only when break statement is executed control will end execution of loop. Igf break statement is not executed loop will keep running.
+After we have accepted input value from user into ch variable, we have checked if value of ch variable is equal to '$', if yes, then we have executed break statement and the loop will end. So this means that after user enters '$' symbol as value of ch variable then pgm will stop accepting any more input character values from user to be stored in the file. 
+
+You can mention any character other than $ for ending the loop.
+
+
+*/
+	fclose(fp);
+//fclose() is a predefined function in stdio.h header file and it will close file in mode //in which it was opened
+
+}
+
+void read1()
+{
+	char ch;
+
+	fp=fopen("F:\\C language Saurabh 5th October 2021\\chap 10 file handling\\saurabh1.txt","r");
+/*
+Here we have again called fopen() function and we have passed "r" as 2nd input to fopen() function. So here "r" means read mode. If the file named saurabh1.txt is not present in the path F:\\C language Saurabh 5th October 2021\\chap 10 file handling, then automatically a new file is not created by compiler but fopen() will return NULL value. NULL is a predefined constant in stdio.h header file. It is defined with value 0 using #define in stdio.h.
+
+So in case file named saurabh1.txt is present in the above location F:\\C language Saurabh 5th October 2021\\chap 10 file handling, fopen() function will open the file in read mode and it will return address of 1st location in the file and store it into fp pointer variable.
+
+So now using fp after execution of above statement we can read data from the file. 
+*/
+	
+
+	if(fp==NULL)
+	{
+		printf("\n The file couldnot be opened successfully in read mode");
+
+	}
+
+	else
+	{
+		printf("\n The characters currently stored in the file are:");
+		while(1)
+		{
+			ch=fgetc(fp);
+
+			if(ch==EOF)
+			{
+				break;
+
+			}
+
+			printf("%c",ch);
+
+		}
+/*
+fgetc() is a predefined function in stdio.h header file. fgetc(fp) will read character from current location in the file where fp is pointing and character read is assigned to ch variable on LHS. Also after the character has been read using fgetc() function automatically the fp will move to the next location in the file from where the next character must be read.
+
+After the fp reaches end of the file, fgetc(fp) returns EOF which is a predefined constant defined in stdio.h header file. EOF means end of file. So if value read into ch variable is EOF, then we are ending the loop. If value read into ch variable is not EOF, then we are printing character value of ch variable on screen.
+
+*/
+		fclose(fp);
+	}
+}

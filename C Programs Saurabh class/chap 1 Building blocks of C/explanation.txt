@@ -1,0 +1,125 @@
+Building blocks of C:
+To learn any programming language we need 3 things:
+A. Keywords:
+Keywords are those reserved words in C language using which we can wrote programs in C language. The meaning of every keyword is fixed in C language and compiler already knows meaning of each keyword. The compiler will automatically convert the .C program or source code into binary format or .exe file. There are 32 keywords in C language.
+
+e.g. int,float,char,if,else,switch,case,for,while etc.
+
+e.g.
+int a;
+int is a data type in C language and so it is a keyword. When compiler runs the statement int a, compiler understands that 'a' is a variable name. So compiler will allocate or reserve separate 2 byte RAM memory area for 'a' variable. So whichever values we assign or store into a variable will be stored into 2 byte RAM memory area reserved for 'a' variable.
+e.g.
+a=15;
+a=100;
+a=-90;
+So current value of 'a' variable is -90 because it was executed last.
+
+
+
+int m;
+Here compiler reserves separate 2 byte RAM memory area for m variable which is different from 'a' variable. 
+
+m=100;
+Here only value of m variable is 100, but 100 is not stored in 'a' variable because it has different RAM memory area.
+
+
+m=50;
+a=20;
+
+a=m*a;
+Here value of m is not changed but value of variable a is changed and it is 50 multiply by 20 which is 1000.
+
+a is 1000
+m is 50
+
+
+
+
+
+
+B. Variables:
+Variables are named RAM memory locations which are used to store input or output values of C program during program execution.
+
+When we use any variable, we must declare that variable using its data type.
+
+e.g
+int y,x,a;
+In above statement we have declared 3 variables y,x and a of data type int. So there will be 2 separate byte RAM memory area allocated or reserved for y, 2 separate bytes for x, 2 separate bytes for a.
+
+
+y=100;
+y=5;
+Here value of y after execution of the 2 above statements will be 5.
+
+
+x=32;
+x is 32
+
+a=-11;
+a is -11
+
+Data type is a keyword in C language and it tells compiler that how much RAM memory area must be allocated for the variable and which type of values can be stored in the variable.
+
+
+Range for a data type is the set of values which are allowed for that data type.
+e.g. range for int type is -32768 to +32767. This means that when we declare variable of type int we can store values between -32768 to +32767 into int type and not value lesser than -32768 or greater than 32767.
+
+Data types of C:
+1. integer
+int(2 bytes)
+short int(1 byte)
+long int(4 bytes)
+All types under integer group like int or short int orlong int include only positive or negative values without point and also include 0.
+
+
+2. floating
+float(4 bytes)
+double(8 bytes)
+long double(10 bytes)
+All types under floating group like float or double or long doubke include positive or negative values with or without point and also include 0.
+
+
+3. char:
+1 byte
+
+When we declare char type variable we can store only single characters of keyboard into the variable and we must mention the character value inside single quotes.
+
+e.g.
+char p;
+
+p='a';
+
+p='K';
+
+p='1';
+Here final value of p variable is '1' character value.
+
+
+Every character value of keyboard has a unique positive integer value defined for it in C language from first only.
+
+This is ascii value for that character.
+
+
+
+ascii value
+
+'a'-'z': 97-122
+
+'A'-'Z': 65-90
+
+'0'-'9':  48-57
+
+When we store a character value into char variable, the actual character is not stored into char variable, but compiler will store ascii value for that character into 1 byte RAM memory area for the char variable.
+
+e.g.
+char ch='d';
+Here ascii value of 'd' is 100. The actual value stored in character variable ch is ascii value of 'd' 100.
+
+
+
+char m='C';
+value stored in m variable is ascii value of 'C' 67.
+
+char r='2';
+Value stored in r variable is 50.
+

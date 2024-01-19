@@ -1,0 +1,48 @@
+Statements of C language:
+
+1.printf():
+printf() is a predefined function. Function is a set of statements in C language and it does some job or work for user. 
+printf() is used to display output values on screen.
+e.g.
+int a=5;
+float b=5.9;
+char ch='p';
+Suppose we want to display values of 3 variables a,b and ch. Then we will write printf() statement as:
+
+printf("\n The values of a,b and ch are %f,%d,%c",b,a,ch);
+\n is called escape sequence character. It takes cursor to newline. Then the next part of message  "The values of a,b and ch are ".
+
+%f,%d and %c are called as format specifiers. They tell compiler what is the data type of the variable. For int it is %d, for float it is %f and for char %c.
+
+The order in which we write format specifiers inside double quotes of printf() must be same as order in which we mention variable names outside double quotes in printf() in left to right order.
+
+So output of the above printf() is:
+ The values of a,b and ch are 5.900000 5 p
+
+When we use format specifier %f then compiler displays exactly 6 digits after decimal point in value of variable b. 
+
+
+printf("\n The values of a,b and ch are %.3f,%d,%c",b,a,ch);
+Here compiler displays 3 digits after point in value of variable b.
+ The values of a,b and ch are 5.900 5 p
+
+In printf() we dont write & symbol before name of variable outside double quotes because in printf() we display values of variables on screen.
+
+2. scanf():
+scanf() is a predefined function in C language. It is used for accepting input value from user into RAM memory of variable.
+e.g.
+int a;
+float b;
+char ch;
+
+scanf("%d%f%c",&a,&b,&ch);
+When we mention variable names outside double quotes of scanf() we must also mention & symbol before name of each variable. 
+e.g. &a tells compiler where is RAM memory location allocated for variable a.
+
+
+So during execution of above scanf(), 1st value typed by user from keyboard on output screen will be stored into RAM memory of a variable, 2nd value is stored into RAM memory of b variable and 3rd value is stored into RAM memory of ch variable.
+
+
+
+
+

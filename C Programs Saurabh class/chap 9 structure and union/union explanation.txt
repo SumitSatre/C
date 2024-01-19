@@ -1,0 +1,23 @@
+union Student
+{
+	char name[100];
+	int rno;
+	int per;
+
+};
+
+union Student s1,s2,s3,s4;
+
+union is a keyword in C. It is also used to define our own data type. A union variable also contains data members like a struct variable.
+
+But the size allocated in no. of bytes to every variable of union type, is equal to size of largest data member of the union variable.
+
+Here the Student has been efined as a union type. The largest data member of union Student type is  name having size 100 bytes. So size allocated in RAM memory to every variable of type union Student is 100 bytes.
+
+So size allocated to union Student variables s1,s2,s3 and s4 is 100 bytes.
+
+Unlike a structure, for every variable declared using union data type, the RAM memory block allocated for the union variable will be shared between all data members of union. So in 100 bytes RAM memory area allocated for union variables s1,s2,s3 and s4 resp. there will not be separate sections of RAM memory for the data members, the same 100 bytes of RAM memory area will be shared by data members of s1. Similarly for s2,s3,s4.
+
+So we can store input value into atmost 1 data member of union variable.
+e.g. if we store input value into name data member of union variable s1, then into rno data member of s1 and then into per data member of s1, so because we have accepted input into per data member of s1 at last, so value for s1.per will remain valid but it will overwrite the values for the data members name and rno for s1. So values for data members name and rno for s1 will not be correct.
+

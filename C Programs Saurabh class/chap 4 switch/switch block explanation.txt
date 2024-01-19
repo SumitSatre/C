@@ -1,0 +1,99 @@
+switch block:
+
+switch block is used to select 1 option from list of multiple options.
+
+int m=5;
+
+switch(m)
+{
+	case 10:
+		printf("\n Good Morning");
+		
+	case 5: 		
+		printf("\n Good Evening");
+		
+
+	case 7: 		
+		printf("\n Hello");	
+
+	
+	case -9: printf("\n ABC");
+		break;
+
+	case 11: printf("\n MNO");
+
+	case 3: printf("\n XYZ");	
+
+}
+
+Here we have used m variable as the switch block variable. Compiler will check what is value of m variable. 
+Then compiler will compare the value of m variable with the numbers mentioned with all the cases in the switch block. 
+So control will directly go to the case 5, because m variable value is 5. So Good Evening is displayed on screen.
+Because there is no break statement in case 5, so control will remain inside the switch block and go to next below case,which is case 7 and Hello is printed. There is no break statement in case 7 so control will go to next case -9, and ABC is printed.
+After ABC is printed, the break statement will take control out of switch block.
+
+So output is:
+Good Evening
+Hello
+ABC
+
+
+
+
+int m=15;
+
+switch(m)
+{
+	case 10:
+		printf("\n Good Morning");
+		
+	case 5: 		
+		printf("\n Good Evening");
+		
+
+	case 7: 		
+		printf("\n Hello");	
+
+	
+	case -9: printf("\n ABC");
+		break;
+
+	case 11: printf("\n MNO");
+
+	case 3: printf("\n XYZ");	
+
+}
+Because value of m variable is 15, and because there is no case in switch block having number 15, so no case will run and so no output is printed.
+
+
+int m=15;
+
+switch(m)
+{
+	case 10:
+		printf("\n Good Morning");
+		
+	default: 		
+		printf("\n Good Evening");
+		
+
+	case 7: 		
+		printf("\n Hello");	
+
+	
+	case -9: printf("\n ABC");
+		break;
+
+	case 11: printf("\n MNO");
+
+	case 3: printf("\n XYZ");	
+
+}
+default is a keyword in C language. If the value of the switch block variable, doesnt match with any number of any case inside the switch block, the control will directly go to the default case.
+
+So output is:
+Good Evening
+Hello
+ABC
+
+
